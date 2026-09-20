@@ -1,0 +1,6 @@
+productUSD=[0]*6
+for x in range(len(productUSD)):
+    productUSD[x]=float(input(f"Input {x+1}'s Product Cost:"))
+for x in range(len(productUSD)):
+    productUSD[x]*=0.87
+    print(f"Product{x+1}'s Price in Euros: {productUSD[x]:.2f}")
