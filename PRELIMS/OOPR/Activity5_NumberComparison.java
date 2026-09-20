@@ -6,11 +6,11 @@ public class Activity5_NumberComparison {
         int output;
         System.out.print("Enter first number: ");
         int x = input.nextInt();
-        System.out.print("Enter first number: ");
+        System.out.print("Enter second number: ");
         int y = input.nextInt();
         if(x>y){output = x;}
         else output=y;
-        System.out.print("Enter first number: ");
+        System.out.print("Enter third number: ");
         int z = input.nextInt();
         if(output<z){output = z;}
         System.out.print("The highest number is: "+output);
