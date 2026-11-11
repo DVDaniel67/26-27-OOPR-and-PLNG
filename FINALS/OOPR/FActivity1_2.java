@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class FActivity1_2 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        String[]names = new String[] {"Notebook", "Pen", "Folder", "USB"};
+        int[] stock = new int[4];
+        int[] reorder = new int[] {5,10,5,2};
+        int[] target = new int[] {20,30,20,10};
+        int[] orderamount = new int[4];
+        int totalstock=0,ordersize = 0;
+        for(int i = 0;i<4;i++){
+            while(true){
+                System.out.printf("%s Stock: ",names[i]);
+                stock[i] = input.nextInt();
+                if(stock[i]<0||stock[i]>10000){System.out.println("Invalid input! Please enter a number from 0-10000.");}
+                else{
+                    totalstock+=stock[i];
+                    if(stock[i]<=reorder[i]){
+                        orderamount[i] = target[i]-stock[i];
+                    }else orderamount[i]=0;
+                    ordersize+=orderamount[i];
+                    break;
+                }
+            }
+        }
+        for(int i = 0;i<4;i++){
+            System.out.printf("%s stock: %d\tOrder: %d\n",names[i],stock[i],orderamount[i]);
+        }
+        System.out.println("Total Stock: "+totalstock+"\nTotal Suggested Order: "+ordersize);
+        input.close();
+    }
+}
