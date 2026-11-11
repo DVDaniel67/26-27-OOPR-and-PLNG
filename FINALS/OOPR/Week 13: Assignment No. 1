@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Mavenproject1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter ten numbers:");
+        int[] arr = new int[10];
+        for(int i = 0;i<10;i++){
+            arr[i] = input.nextInt();
+        }
+        System.out.println("Here is the list of Even Number/s:");
+        for (int num:arr){
+            if(num%2==0){
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
