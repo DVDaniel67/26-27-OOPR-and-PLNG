@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class FActivity1_1 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int studentcount;
+        while(true){
+            System.out.print("Enter amount of students: ");
+            studentcount = input.nextInt();
+            if(studentcount<1||studentcount>50){System.out.println("Please enter 1-50 students!");}
+            else break;
+        }
+        int[]arr = new int[studentcount];
+        double average=0;
+        int passed=0,failed=0;
+        for(int i = 0;i<studentcount;i++){
+            while(true){
+                System.out.print("Enter Student "+(i+1)+"'s score: ");
+                arr[i]= input.nextInt();
+                if(arr[i]<0||arr[i]>100){System.out.println("Please enter a score from 1-100!");}
+                else {
+                    if(arr[i]>74)passed++;
+                    else failed++;
+                    average+=arr[i];
+                    break;
+                }
+            }
+        }
+        int high = Arrays.stream(arr).max().getAsInt();
+        int low = Arrays.stream(arr).min().getAsInt();
+        average/=studentcount;
+        System.out.printf("Average: %.2f\nHighest: %d\tLowest: %d\nPassed: %d\tFailed: %d\nTop Student numbers: ",average,high,low,passed,failed);
+        for(int i=0;i<studentcount;i++){
+            if(arr[i]==high){System.out.print(i+1+" ");}
+        }
+        input.close();
+    }
+}
