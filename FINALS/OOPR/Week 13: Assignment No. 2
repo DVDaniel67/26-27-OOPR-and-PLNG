@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Mavenproject2 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter five numbers: ");
+        int[] arr = new int[5];
+        for(int i = 0;i<5;i++){
+            arr[i] = input.nextInt();
+        }
+        int high = Arrays.stream(arr).max().getAsInt();
+        System.out.println("The highest is: "+high);
+        System.out.println("The difference from the highest are:");
+        for(int num:arr){
+            System.out.println(high + " - " + num + " = " + (high-num));
+        }
+    }
+}
